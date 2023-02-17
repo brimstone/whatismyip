@@ -12,7 +12,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	if ip == "" {
 		ip, _, _ = net.SplitHostPort(r.RemoteAddr)
 	}
-	fmt.Fprintf(w, "<html><body><h1>Requester IP: %s</h1><h2>User-Agent: %s</h2></body></html>", ip, r.UserAgent())
+	fmt.Fprintf(w, "<html><title>%s</title><body><h1>Requester IP: %s</h1><h2>User-Agent: %s</h2></body></html>", ip, ip, r.UserAgent())
 }
 
 func main() {
